@@ -9,7 +9,7 @@ pipeline {
     }
 
     environment {
-        app_repo    = "https://shashikant09@github.com/shashikant09/dataproc-cicd.git"
+        app_repo    = "https://github.com/shashikant09/dataproc-cicd.git"
         PROJECT_ID = 'broadcom-service-project2'          
     }
 
