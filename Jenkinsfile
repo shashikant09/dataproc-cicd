@@ -40,7 +40,7 @@ pipeline {
         stage('Run gcloud') {
             steps {
                 withEnv(['GCLOUD_PATH=/usr/bin']) {
-                sh '$GCLOUD_PATH/gsutil cp ./gcs-dataproc-bigquery.py gs://us-central1-demo-ephemeral--c797ec6a-bucket/dags/
+                sh '$GCLOUD_PATH/gsutil cp ./gcs-dataproc-bigquery.py gs://us-central1-demo-ephemeral--c797ec6a-bucket/dags/'
             }
          }
       }
