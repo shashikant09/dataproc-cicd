@@ -35,7 +35,8 @@ pipeline {
 
         stage('Build') {
             steps {
-                git branch: 'master', url: "${env.app_repo}}
+                git branch: 'master', url: "${env.app_repo}"
+                }
         }
         stage('Run gcloud') {
             steps {
