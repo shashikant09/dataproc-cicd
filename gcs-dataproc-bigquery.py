@@ -6,14 +6,13 @@ from airflow.contrib.operators.gcs_to_bq import GoogleCloudStorageToBigQueryOper
 from airflow.models import Variable
 
 jar_location = Variable.get("jar_location")
-build_id = Variable.get("BUILD_ID")
 
 yesterday = datetime.combine(datetime.today() - timedelta(1),
                              datetime.min.time())
 
 
 default_args = {
-    'owner': 'Shashikant',
+    'owner': 'Sumeet',
     'depends_on_past': False,
     'start_date' :yesterday,
     'email': ['airflow@example.com'],
@@ -47,7 +46,7 @@ run_spark_job = DataProcSparkOperator(
    dag=dag,
    arguments=["1000000"],
    region="us-west1",
-   task_id ='example-job-build_id',
+   task_id ='example-spark-job',
    dataproc_spark_jars=DATAPROC_SPARK_JARS,
 #    dataproc_spark_properties=DATAPROC_SPARK_PROP,
    cluster_name='cluster-f4a8',
