@@ -44,12 +44,11 @@ pipeline {
                 sh 'echo $BUILD_ID'
                 sh 'echo $PROJECT_ID'
                 sh 'echo $BUILD_NUMBER'
-                sh '$GCLOUD_PATH/gcloud composer environments update demo-ephemeral-dataproc --project=$PROJECT_ID --location=us-central1 --update-env-variables=BUILD_ID=$BUILD_ID'
+//                sh '$GCLOUD_PATH/gcloud composer environments update demo-ephemeral-dataproc --project=$PROJECT_ID --location=us-central1 --update-env-variables=BUILD_ID=$BUILD_ID'
+                sh '$GCLOUD_PATH/gcloud composer environments run demo-ephemeral-dataproc --project=$PROJECT_ID --location=us-central1 variables -- --set BUILD_ID $BUILD_ID'
                 sh '$GCLOUD_PATH/gsutil cp ./example-build-id.py gs://us-central1-demo-ephemeral--c797ec6a-bucket/dags/'
             }
          }
       }
    }
 }
-
-
