@@ -47,7 +47,7 @@ pipeline {
 //                sh '$GCLOUD_PATH/gcloud composer environments update demo-ephemeral-dataproc --project=$PROJECT_ID --location=us-central1 --update-env-variables=BUILD_ID=$BUILD_ID'
                 sh 'sudo apt-get install kubectl'
                 sh '$GCLOUD_PATH/gcloud composer environments run demo-ephemeral-dataproc --project=$PROJECT_ID --location=us-central1 variables -- --set BUILD_ID $BUILD_ID'
-                sh '$GCLOUD_PATH/gsutil cp ./example-build-id.py gs://us-central1-demo-ephemeral--c797ec6a-bucket/dags/'
+                sh '$GCLOUD_PATH/gsutil cp ./example-build.py gs://us-central1-demo-ephemeral--c797ec6a-bucket/dags/'
             }
          }
       }
