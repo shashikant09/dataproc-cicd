@@ -52,6 +52,7 @@ run_spark_job = DataProcSparkOperator(
 #    dataproc_spark_properties=DATAPROC_SPARK_PROP,
    cluster_name='cluster-f4a8',
    main_class = 'org.apache.spark.examples.SparkPi',
+   verbose = 'True',
 )
 
 
